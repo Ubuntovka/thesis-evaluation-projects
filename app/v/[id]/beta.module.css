@@ -67,6 +67,27 @@
 .quartz::after { content: var(--note); position: absolute; z-index: 6; right: 0; top: 34px; width: max-content; max-width: 190px; padding: 6px 8px; border-radius: 5px; background: #10362c; color: #fff; font-size: 9px; font-weight: 600; opacity: 0; pointer-events: none; box-shadow: 0 3px 10px rgba(0,0,0,.16); }
 .quartz:hover::after, .quartz:focus-visible::after { opacity: 1; }
 
+/* Keep compact content close to the viewport edge; reserve broad margins for
+   the spacious catalogue without changing any card content or typography. */
+.ivory .headerInner,
+.ivory .introInner,
+.ivory .catalogue { width: calc(100% - 32px); }
+.ivory .grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 10px;
+}
+.ivory .cover { height: 58px; padding: 9px 10px; }
+.ivory .courseMark { width: 28px; height: 28px; }
+.ivory .category { left: 10px; bottom: 7px; }
+.ivory .bookmark { top: 8px; right: 9px; }
+.ivory .coverLine { right: 0; bottom: -42px; }
+.ivory .cardBody { min-height: 103px; padding: 10px 12px; }
+
+.orbit .headerInner,
+.orbit .introInner,
+.orbit .catalogue { width: min(1000px, calc(100% - 160px)); }
+.orbit .grid { gap: 28px; }
+
 @media (max-width: 900px) {
   .headerInner, .introInner, .catalogue { width: calc(100% - 32px); }
   .header nav { display: none; }

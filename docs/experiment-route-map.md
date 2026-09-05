@@ -27,3 +27,5 @@ The application intentionally uses opaque, non-sequential route identifiers. Can
 | D | Website — Alpha — accessibility, reduce issues | IDE — Beta — layout density, more spacious |
 
 These assignments are researcher-only documentation and are not implemented in the participant-facing application.
+
+The fixed-viewport metric evidence and final repetition identifiers are recorded in [UIQLab validation](./uiqlab-validation.md).

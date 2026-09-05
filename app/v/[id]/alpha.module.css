@@ -28,15 +28,15 @@
   --row-pad: 7px;
   --panel-pad: 12px;
   --meta-gap: 8px;
-  --sidebar-block-pad: 17px;
-  --sidebar-inline-pad: 14px;
-  --brand-bottom-pad: 18px;
-  --nav-gap: 2px;
-  --nav-row-height: 34px;
-  --team-card-pad: 11px;
-  --profile-top-pad: 11px;
-  --profile-top-margin: 11px;
-  --header-height: 52px;
+  --sidebar-block-pad: 24px;
+  --sidebar-inline-pad: 16px;
+  --brand-bottom-pad: 26px;
+  --nav-gap: 4px;
+  --nav-row-height: 40px;
+  --team-card-pad: 17px 13px;
+  --profile-top-pad: 18px;
+  --profile-top-margin: 17px;
+  --header-height: 62px;
   --header-inline-pad: 24px;
   --content-top-pad: 17px;
   --content-inline-pad: 24px;
@@ -124,6 +124,68 @@
 .menuIcon { width: 16px; height: 4px; background: radial-gradient(circle, currentColor 1.5px, transparent 1.7px) 0 50% / 6px 4px repeat-x; }
 .quartz::after { content: var(--note); position: absolute; z-index: 5; right: 32px; top: 50%; width: max-content; max-width: 190px; transform: translateY(-50%); padding: 6px 8px; border-radius: 5px; background: #11182d; color: #fff; font-size: 9px; font-weight: 600; opacity: 0; pointer-events: none; box-shadow: 0 3px 9px rgba(0,0,0,.17); }
 .quartz:hover::after, .quartz:focus-visible::after { opacity: 1; }
+
+/*
+ * Density variants deliberately change the layout system, not the content.
+ * The compact board moves persistent navigation into a shallow horizontal
+ * rail and uses a two-column summary so the same information occupies the
+ * viewport more evenly. The spacious board narrows the reading measure.
+ */
+.ivory.shell {
+  display: block;
+}
+.ivory .sidebar {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: auto minmax(560px, 1fr) auto auto;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 18px;
+}
+.ivory .brand { padding: 0; }
+.ivory .navigation {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(92px, max-content));
+  align-items: end;
+  gap: 2px 4px;
+}
+.ivory .navigation .eyebrow {
+  grid-column: 1 / -1;
+  margin: 0 10px;
+}
+.ivory .navigation a { min-height: 34px; }
+.ivory .teamCard { margin-top: 0; padding: 9px 12px; }
+.ivory .teamCard .eyebrow { margin-bottom: 5px; }
+.ivory .profile {
+  margin-top: 0;
+  padding: 0 8px 0 18px;
+  border-top: 0;
+  border-left: 1px solid #293656;
+}
+.ivory .content {
+  max-width: none;
+  padding-inline: 18px;
+}
+.ivory .metrics {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.ivory .projectList {
+  display: grid;
+  gap: 4px;
+  border: 0;
+}
+.ivory .project {
+  padding-block: 10px;
+  border: 1px solid #e8eaf1;
+  border-radius: 6px;
+}
+
+.orbit .content { max-width: 840px; }
+.orbit .columnHead,
+.orbit .project {
+  grid-template-columns: minmax(230px, 2fr) 84px minmax(105px, .95fr) 86px 88px 28px;
+}
 
 @media (max-width: 900px) {
   .shell { grid-template-columns: 76px minmax(820px, 1fr); }

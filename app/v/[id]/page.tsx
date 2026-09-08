@@ -20,8 +20,8 @@ export default async function ExperimentPage({
   if (!screen) notFound();
 
   return screen.product === "alpha" ? (
-    <AlphaView skin={screen.skin} signal={screen.signal} />
+    <AlphaView condition={screen.condition} />
   ) : (
-    <BetaView skin={screen.skin} signal={screen.signal} />
+    <BetaView condition={screen.condition} />
   );
 }

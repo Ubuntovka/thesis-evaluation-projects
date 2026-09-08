@@ -7,8 +7,8 @@
   color: #173b34;
 }
 
-.ivory { --grid-gap: 13px; --card-pad: 14px; --inner-gap: 7px; }
-.orbit { --grid-gap: 25px; --card-pad: 23px; --inner-gap: 15px; }
+.baseline, .textAmount, .accessibility { --condition-marker: 0; }
+.screenWhitespace { --grid-gap: 28px; --card-pad: 23px; --inner-gap: 15px; }
 .header { height: 68px; border-bottom: 1px solid #dce8e1; background: #fffefb; }
 .headerInner { width: min(1220px, calc(100% - 80px)); height: 100%; display: flex; align-items: center; margin: 0 auto; }
 .brand { display: flex; align-items: center; gap: 9px; margin-right: 54px; color: #18483c; font-size: 19px; font-weight: 800; letter-spacing: -.035em; text-decoration: none; }
@@ -18,8 +18,9 @@
 .header nav a:hover, .header nav .current { color: #17684f; }
 .header nav .current::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #2b9874; }
 .account { margin-left: auto; display: flex; align-items: center; gap: 9px; }
-.search { margin-right: 14px; color: #526a63; font-size: 11px; }
-.search::before { content: "○"; margin-right: 6px; color: #2d8068; font-size: 14px; }
+.search { width: 76px; margin-right: 14px; padding: 5px 0; border: 0; border-radius: 4px; outline: none; background: transparent; color: #526a63; font-size: 11px; }
+.search::placeholder { color: #526a63; opacity: 1; }
+.search:focus-visible { box-shadow: 0 0 0 2px rgba(43, 152, 116, .2); }
 .avatar { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 50%; background: #dcefe7; color: #27725b; font-size: 9px; font-weight: 800; }
 .account strong, .account small { display: block; }
 .account strong { font-size: 10px; }
@@ -64,29 +65,45 @@
 .cardFoot { display: flex; justify-content: space-between; margin-top: auto; padding-top: var(--inner-gap); border-top: 1px solid #e7eee9; color: #526861; font-size: 8px; }
 .cardFoot span:last-child { color: #267159; font-weight: 750; }
 .cardFoot b { margin-left: 3px; font-size: 11px; }
-.quartz::after { content: var(--note); position: absolute; z-index: 6; right: 0; top: 34px; width: max-content; max-width: 190px; padding: 6px 8px; border-radius: 5px; background: #10362c; color: #fff; font-size: 9px; font-weight: 600; opacity: 0; pointer-events: none; box-shadow: 0 3px 10px rgba(0,0,0,.16); }
-.quartz:hover::after, .quartz:focus-visible::after { opacity: 1; }
+/* Each profile changes one dominant visual characteristic from the baseline. */
+.visualClutter { --condition-marker: 1; }
+.visualClutter .coverLine,
+.visualClutter .courseMark,
+.visualClutter .details span + span::before,
+.visualClutter .cardFoot b { display: none; }
+.visualClutter .card,
+.visualClutter .filters a { border-color: transparent; box-shadow: none; }
+.visualClutter .filters .selected { background: #236e58; }
+.visualClutter .cardFoot { border-top-color: transparent; }
 
-/* Keep compact content close to the viewport edge; reserve broad margins for
-   the spacious catalogue without changing any card content or typography. */
-.ivory .headerInner,
-.ivory .introInner,
-.ivory .catalogue { width: calc(100% - 32px); }
-.ivory .grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px 10px;
-}
-.ivory .cover { height: 58px; padding: 9px 10px; }
-.ivory .courseMark { width: 28px; height: 28px; }
-.ivory .category { left: 10px; bottom: 7px; }
-.ivory .bookmark { top: 8px; right: 9px; }
-.ivory .coverLine { right: 0; bottom: -42px; }
-.ivory .cardBody { min-height: 103px; padding: 10px 12px; }
+.screenWhitespace .headerInner,
+.screenWhitespace .introInner,
+.screenWhitespace .catalogue { width: min(1000px, calc(100% - 160px)); }
+.screenWhitespace .introInner { min-height: 205px; gap: 120px; }
+.screenWhitespace .catalogue { padding-block: 34px 46px; }
+.screenWhitespace .filters { margin-block: 22px 25px; }
 
-.orbit .headerInner,
-.orbit .introInner,
-.orbit .catalogue { width: min(1000px, calc(100% - 160px)); }
-.orbit .grid { gap: 28px; }
+.colorfulness { --condition-marker: 2; }
+.colorfulness .intro { background: linear-gradient(110deg, #dff4e8 0%, #e4f4f0 55%, #f7edcf 100%); }
+.colorfulness .fern { background: #24775b; }
+.colorfulness .ocean { background: #177c88; }
+.colorfulness .citrus { background: #7a8120; }
+.colorfulness .clover { background: #2a8754; }
+.colorfulness .coral { background: #b24f45; }
+.colorfulness .lagoon { background: #2e719d; }
+.colorfulness .filters a:nth-child(2) { background: #edf8f1; color: #237253; }
+.colorfulness .filters a:nth-child(3) { background: #e8f6f7; color: #176e75; }
+.colorfulness .filters a:nth-child(4) { background: #f4f5dc; color: #68721d; }
+.colorfulness .filters a:nth-child(5) { background: #fff0ea; color: #98483e; }
+.colorfulness .filters a:nth-child(6) { background: #edf0fb; color: #485d9c; }
+
+.imageAesthetic { --grid-gap: 22px; --condition-marker: 3; }
+.imageAesthetic .grid { align-items: stretch; }
+.imageAesthetic .card { border-color: #cfdfd5; box-shadow: 0 11px 28px rgba(28, 79, 63, .1); }
+.imageAesthetic .cover { height: 88px; }
+.imageAesthetic .coverLine { right: -12px; bottom: -27px; transform: rotate(-8deg); }
+.imageAesthetic .cardBody { min-height: 140px; }
+.imageAesthetic .courseMark { background: rgba(255,255,255,.18); box-shadow: 0 4px 12px rgba(15, 54, 43, .12); }
 
 @media (max-width: 900px) {
   .headerInner, .introInner, .catalogue { width: calc(100% - 32px); }

@@ -1,31 +1,20 @@
 # Experiment route map
 
-The application intentionally uses opaque, non-sequential route identifiers. Candidate A/B labels are assigned outside the application and are not encoded in routes or interface content.
+The application uses opaque, non-sequential route identifiers. Every variant is compared with the baseline from the same project; condition names are researcher-only and do not appear in the participant-facing interface.
 
-## Route mapping
-
-| Route | Project | Condition |
-| --- | --- | --- |
-| `/v/k7m2qx` | Alpha — project-management dashboard | Neutral density baseline; six unnamed icon-only project menu buttons |
-| `/v/v3h9dp` | Alpha — project-management dashboard | Moderately more compact layout; six unnamed icon-only project menu buttons |
-| `/v/n8t4cw` | Alpha — project-management dashboard | Moderately more spacious layout; six unnamed icon-only project menu buttons |
-| `/v/f6z1jr` | Alpha — project-management dashboard | Visually identical to baseline; all six project menu buttons have meaningful accessible names |
-| `/v/y3b7se` | Alpha — project-management dashboard | Visually identical to baseline; visual-only tooltips; six project menu buttons remain unnamed |
-| `/v/r8m2xd` | Beta — professional course catalogue | Neutral density baseline; six unnamed icon-only bookmark buttons |
-| `/v/l5q9au` | Beta — professional course catalogue | Moderately more compact layout; six unnamed icon-only bookmark buttons |
-| `/v/c2x7pk` | Beta — professional course catalogue | Moderately more spacious layout; six unnamed icon-only bookmark buttons |
-| `/v/w7j4bn` | Beta — professional course catalogue | Visually identical to baseline; all six bookmark buttons have meaningful accessible names |
-| `/v/t9f6ms` | Beta — professional course catalogue | Visually identical to baseline; visual-only tooltips; six bookmark buttons remain unnamed |
-
-## Research groups
-
-| Group | First task | Second task |
-| --- | --- | --- |
-| A | IDE — Alpha — layout density, more compact | Website — Beta — accessibility, reduce issues |
-| B | Website — Alpha — layout density, more compact | IDE — Beta — accessibility, reduce issues |
-| C | IDE — Alpha — accessibility, reduce issues | Website — Beta — layout density, more spacious |
-| D | Website — Alpha — accessibility, reduce issues | IDE — Beta — layout density, more spacious |
-
-These assignments are researcher-only documentation and are not implemented in the participant-facing application.
-
-The fixed-viewport metric evidence and final repetition identifiers are recorded in [UIQLab validation](./uiqlab-validation.md).
+| Route | Project | Condition | Target direction | Relevant metric(s) | Main change |
+| --- | --- | --- | --- | --- | --- |
+| `/v/k7m2qx` | Alpha | Baseline | — | — | Existing project dashboard with one unnamed row-action button and an unlabelled search field |
+| `/v/v3h9dp` | Alpha | Visual clutter | Less cluttered | M9, M10, M11 | Removes decorative icons, badges, borders, shadows, and overlapping avatar treatment |
+| `/v/n8t4cw` | Alpha | Screen white space | More whitespace | M5 | Increases page, panel, navigation, card, and row spacing and narrows the content area |
+| `/v/y3b7se` | Alpha | Text amount | Fewer words | M8 | Shortens supporting copy, summaries, update text, and project descriptions |
+| `/v/a4q9sn` | Alpha | Colorfulness | More colorful | M3 | Adds varied accent colors to the sidebar, summary cards, and progress bars |
+| `/v/h2w6fc` | Alpha | Image aesthetic score | Observe | M14 | Applies a modest card-balance, shadow, and presentation-polish variation |
+| `/v/f6z1jr` | Alpha | Accessibility | Fewer detected violations | M13 | Labels the search field and the remaining unnamed row-action button |
+| `/v/r8m2xd` | Beta | Baseline | — | — | Existing course catalogue with one unnamed bookmark button and an unlabelled search field |
+| `/v/l5q9au` | Beta | Visual clutter | Less cluttered | M9, M10, M11 | Removes repeated cover marks, decorative lines, separators, borders, shadows, and arrow details |
+| `/v/c2x7pk` | Beta | Screen white space | More whitespace | M5 | Widens gaps and margins and gives the intro and catalogue more breathing room |
+| `/v/t9f6ms` | Beta | Text amount | Fewer words | M8 | Shortens intro, proof, recommendation, course-description, and action copy |
+| `/v/m8r3vk` | Beta | Colorfulness | More colorful | M3 | Strengthens and varies cover, filter, and intro accent colors |
+| `/v/z5p7ld` | Beta | Image aesthetic score | Observe | M14 | Applies a modest card-proportion, depth, and cover-composition variation |
+| `/v/w7j4bn` | Beta | Accessibility | Fewer detected violations | M13 | Labels the search field and the remaining unnamed bookmark button |

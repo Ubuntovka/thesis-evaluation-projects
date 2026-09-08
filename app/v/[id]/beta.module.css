@@ -8,7 +8,7 @@
 }
 
 .baseline, .textAmount, .accessibility { --condition-marker: 0; }
-.screenWhitespace { --grid-gap: 28px; --card-pad: 23px; --inner-gap: 15px; }
+.screenWhitespace { --grid-gap: 30px; --card-pad: 26px; --inner-gap: 17px; }
 .header { height: 68px; border-bottom: 1px solid #dce8e1; background: #fffefb; }
 .headerInner { width: min(1220px, calc(100% - 80px)); height: 100%; display: flex; align-items: center; margin: 0 auto; }
 .brand { display: flex; align-items: center; gap: 9px; margin-right: 54px; color: #18483c; font-size: 19px; font-weight: 800; letter-spacing: -.035em; text-decoration: none; }
@@ -78,10 +78,13 @@
 
 .screenWhitespace .headerInner,
 .screenWhitespace .introInner,
-.screenWhitespace .catalogue { width: min(1000px, calc(100% - 160px)); }
-.screenWhitespace .introInner { min-height: 205px; gap: 120px; }
-.screenWhitespace .catalogue { padding-block: 34px 46px; }
-.screenWhitespace .filters { margin-block: 22px 25px; }
+.screenWhitespace .catalogue { width: min(1220px, calc(100% - 80px)); }
+.screenWhitespace .header { height: 78px; }
+.screenWhitespace .introInner { min-height: 245px; gap: 120px; }
+.screenWhitespace .catalogue { padding-block: 44px 60px; }
+.screenWhitespace .filters { margin-block: 26px 30px; }
+.screenWhitespace .grid { row-gap: 36px; }
+.screenWhitespace .cardBody { min-height: 162px; }
 
 .colorfulness { --condition-marker: 2; }
 .colorfulness .intro { background: linear-gradient(110deg, #dff4e8 0%, #e4f4f0 55%, #f7edcf 100%); }

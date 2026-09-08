@@ -26,24 +26,24 @@
 
 .baseline, .textAmount, .accessibility { --condition-marker: 0; }
 .screenWhitespace {
-  --row-pad: 20px;
-  --panel-pad: 24px;
-  --meta-gap: 20px;
-  --sidebar-block-pad: 32px;
+  --row-pad: 24px;
+  --panel-pad: 28px;
+  --meta-gap: 24px;
+  --sidebar-block-pad: 36px;
   --sidebar-inline-pad: 20px;
-  --brand-bottom-pad: 34px;
-  --nav-gap: 8px;
-  --nav-row-height: 44px;
-  --team-card-pad: 21px 16px;
-  --profile-top-pad: 22px;
-  --profile-top-margin: 22px;
-  --header-height: 70px;
-  --header-inline-pad: 40px;
-  --content-top-pad: 40px;
-  --content-inline-pad: 52px;
-  --metrics-gap: 20px;
-  --metrics-top-margin: 28px;
-  --section-top-margin: 28px;
+  --brand-bottom-pad: 40px;
+  --nav-gap: 11px;
+  --nav-row-height: 46px;
+  --team-card-pad: 24px 18px;
+  --profile-top-pad: 26px;
+  --profile-top-margin: 26px;
+  --header-height: 76px;
+  --header-inline-pad: 48px;
+  --content-top-pad: 52px;
+  --content-inline-pad: 56px;
+  --metrics-gap: 24px;
+  --metrics-top-margin: 34px;
+  --section-top-margin: 36px;
 }
 .sidebar { min-height: 900px; display: flex; flex-direction: column; padding: var(--sidebar-block-pad) var(--sidebar-inline-pad) 18px; background: #121d3b; color: #dfe6ff; }
 .brand { display: flex; align-items: center; gap: 11px; padding: 0 10px var(--brand-bottom-pad); font-size: 17px; font-weight: 750; letter-spacing: -.02em; color: #fff; }
@@ -136,11 +136,7 @@
 .visualClutter .project { border-bottom-color: #f1f2f6; }
 .visualClutter .avatars span { margin-left: 2px; border-width: 0; }
 
-.screenWhitespace .content { max-width: 980px; }
-.screenWhitespace .columnHead,
-.screenWhitespace .project {
-  grid-template-columns: minmax(230px, 2fr) 84px minmax(105px, .95fr) 86px 88px 28px;
-}
+.screenWhitespace .content { max-width: 1208px; padding-bottom: 56px; }
 
 .colorfulness { --condition-marker: 1; }
 .colorfulness .sidebar { background: linear-gradient(165deg, #17265a 0%, #2b2463 55%, #183f52 100%); }

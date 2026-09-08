@@ -1,23 +1,16 @@
-import type { CSSProperties } from "react";
-
 type ActionButtonProps = {
-  signal: 0 | 1 | 2;
-  label: string;
+  accessibleName?: string;
   className: string;
   iconClassName: string;
 };
 
 export function ActionButton({
-  signal,
-  label,
+  accessibleName,
   className,
   iconClassName,
 }: ActionButtonProps) {
-  const extra = signal === 2 ? { "aria-label": label } : {};
-  const style = signal === 1 ? ({ "--note": `"${label}"` } as CSSProperties) : undefined;
-
   return (
-    <button className={className} type="button" style={style} {...extra}>
+    <button className={className} type="button" aria-label={accessibleName}>
       <span className={iconClassName} aria-hidden="true" />
     </button>
   );

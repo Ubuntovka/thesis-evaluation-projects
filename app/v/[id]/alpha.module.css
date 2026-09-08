@@ -26,9 +26,9 @@
 
 .baseline, .textAmount, .accessibility { --condition-marker: 0; }
 .screenWhitespace {
-  --row-pad: 24px;
-  --panel-pad: 28px;
-  --meta-gap: 24px;
+  --row-pad: 12px;
+  --panel-pad: 18px;
+  --meta-gap: 15px;
   --sidebar-block-pad: 36px;
   --sidebar-inline-pad: 20px;
   --brand-bottom-pad: 40px;
@@ -41,7 +41,7 @@
   --header-inline-pad: 48px;
   --content-top-pad: 52px;
   --content-inline-pad: 56px;
-  --metrics-gap: 24px;
+  --metrics-gap: 32px;
   --metrics-top-margin: 34px;
   --section-top-margin: 36px;
 }
@@ -137,6 +137,14 @@
 .visualClutter .avatars span { margin-left: 2px; border-width: 0; }
 
 .screenWhitespace .content { max-width: 1208px; padding-bottom: 56px; }
+.screenWhitespace .metrics { grid-template-columns: repeat(4, minmax(0, 210px)); justify-content: space-between; }
+.screenWhitespace .metrics article { padding: 15px 17px; }
+.screenWhitespace .projectSection { padding-inline: 0; border-color: transparent; background: transparent; box-shadow: none; }
+.screenWhitespace .sectionHeader,
+.screenWhitespace .columnHead,
+.screenWhitespace .projectList { width: calc(100% - 80px); margin-inline: auto; }
+.screenWhitespace .projectList { display: grid; gap: 16px; border: 0; }
+.screenWhitespace .project { padding: 12px 14px; border: 1px solid #e4e7f0; border-radius: 8px; background: #fff; }
 
 .colorfulness { --condition-marker: 1; }
 .colorfulness .sidebar { background: linear-gradient(165deg, #17265a 0%, #2b2463 55%, #183f52 100%); }

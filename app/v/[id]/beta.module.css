@@ -14,9 +14,9 @@
 }
 
 .screenWhitespace {
-  --grid-gap: 30px;
-  --card-pad: 26px;
-  --inner-gap: 17px;
+  --grid-gap: 40px;
+  --card-pad: 14px;
+  --inner-gap: 9px;
 }
 
 .header {
@@ -487,7 +487,7 @@
 }
 
 .screenWhitespace .catalogue {
-  padding-block: 404px 60px;
+  padding-block: 44px 60px;
 }
 
 .screenWhitespace .filters {
@@ -495,11 +495,22 @@
 }
 
 .screenWhitespace .grid {
-  row-gap: 36px;
+  grid-template-columns: repeat(3, minmax(0, 300px));
+  justify-content: space-between;
+  row-gap: 46px;
+}
+
+.screenWhitespace .cover {
+  height: 68px;
+}
+
+.screenWhitespace .courseMark {
+  width: 30px;
+  height: 30px;
 }
 
 .screenWhitespace .cardBody {
-  min-height: 162px;
+  min-height: 116px;
 }
 
 .colorfulness {
@@ -612,5 +623,10 @@
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .screenWhitespace .grid {
+    grid-template-columns: repeat(2, minmax(0, 300px));
+    justify-content: space-around;
   }
 }

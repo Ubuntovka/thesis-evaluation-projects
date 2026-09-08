@@ -570,39 +570,6 @@
   color: #485d9c;
 }
 
-.imageAesthetic {
-  --grid-gap: 22px;
-  --condition-marker: 3;
-}
-
-.imageAesthetic .grid {
-  align-items: stretch;
-}
-
-.imageAesthetic .card {
-  border-color: #cfdfd5;
-  box-shadow: 0 11px 28px rgba(28, 79, 63, .1);
-}
-
-.imageAesthetic .cover {
-  height: 88px;
-}
-
-.imageAesthetic .coverLine {
-  right: -12px;
-  bottom: -27px;
-  transform: rotate(-8deg);
-}
-
-.imageAesthetic .cardBody {
-  min-height: 140px;
-}
-
-.imageAesthetic .courseMark {
-  background: rgba(255, 255, 255, .18);
-  box-shadow: 0 4px 12px rgba(15, 54, 43, .12);
-}
-
 @media (max-width: 900px) {
 
   .headerInner,

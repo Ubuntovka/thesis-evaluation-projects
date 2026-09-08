@@ -160,13 +160,6 @@
 .colorfulness .project:nth-child(5) .progress i { background: #26986f; }
 .colorfulness .project:nth-child(6) .progress i { background: #d06272; }
 
-.imageAesthetic { --condition-marker: 2; }
-.imageAesthetic .content { max-width: 1120px; }
-.imageAesthetic .metrics article { border-color: #dce2f1; box-shadow: 0 7px 20px rgba(33, 50, 95, .07); }
-.imageAesthetic .projectSection { border-color: #dce2ef; box-shadow: 0 12px 32px rgba(33, 50, 95, .08); }
-.imageAesthetic .projectBadge { background: linear-gradient(145deg, #f0f2ff, #dfe5ff); }
-.imageAesthetic .project { padding-inline: 16px; }
-
 @media (max-width: 900px) {
   .shell { grid-template-columns: 76px minmax(820px, 1fr); }
   .sidebar { padding-inline: 10px; }

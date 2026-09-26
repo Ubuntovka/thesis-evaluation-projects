@@ -35,6 +35,18 @@
         "qualityGate": {
           "mode": "warn"
         }
+      },
+      {
+        "path": "/about",
+        "profiles": [
+          {
+            "id": "text-amount",
+            "direction": "observe"
+          }
+        ],
+        "qualityGate": {
+          "mode": "report"
+        }
       }
     ]
   }

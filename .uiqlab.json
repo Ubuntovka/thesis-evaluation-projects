@@ -3,10 +3,10 @@
   "name": "study-website",
   "ci": {
     "branches": [
-      "main",
+      "ci-evaluation",
       "feature/**"
     ],
-    "baselineBranch": "main",
+    "baselineBranch": "ci-evaluation",
     "pages": [
       {
         "path": "/courses",

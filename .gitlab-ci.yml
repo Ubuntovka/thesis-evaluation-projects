@@ -4,7 +4,7 @@ stages:
 
 .uiqlab-rules:
   rules:
-    - if: '$CI_COMMIT_BRANCH == "main"'
+    - if: '$CI_COMMIT_BRANCH == "ci-evaluation"'
     - if: '$CI_COMMIT_BRANCH =~ /^feature\//'
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME =~ /^feature\//'
 

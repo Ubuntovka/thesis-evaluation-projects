@@ -86,7 +86,7 @@ web-ui-assessment:
       echo "UIQLab preview: $UIQLAB_PREVIEW_URL"
       echo "Orchestrator: $UIQLAB_ORCHESTRATOR_URL"
 
-      node tools/uiqlab-ci/dist/src/cli.js
+      node tools/uiqlab-ci/dist/src/cli.js --orchestrator-url "http://127.0.0.1:9"
   artifacts:
     when: always
     name: "uiqlab-$CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA"

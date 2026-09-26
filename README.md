@@ -12,3 +12,5 @@ goals in `.uiqlab.json` with the UIQLab CI client.
 npm ci
 npm run dev
 ```
+
+Reports are saved as `uiqlab-report.html` and `uiqlab-report.json` in the job artifacts.

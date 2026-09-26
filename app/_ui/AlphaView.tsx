@@ -21,7 +21,6 @@ export function AlphaView() {
           <p className={styles.eyebrow}>Workspace</p>
           {navItems.map((item) => (
             <a href="#projects" className={item === "Projects" ? styles.current : undefined} key={item}>
-              <span className={styles.navIcon} aria-hidden="true" />
               {item}
               {item === "My tasks" && <span className={styles.count}>8</span>}
             </a>
@@ -52,11 +51,10 @@ export function AlphaView() {
 
           <section className={styles.projectSection} id="projects">
             <div className={styles.sectionHeader}><div><h2>Projects</h2><span>6 active projects</span></div><span>Last updated 4 Sep, 09:42</span></div>
-            <div className={styles.columnHead} aria-hidden="true"><span>Project</span><span>Status</span><span>Progress</span><span>Deadline</span><span>Team</span><span /></div>
             <div className={styles.projectList}>
               {projects.map((project, index) => (
                 <article className={styles.project} key={project.code}>
-                  <div className={styles.projectInfo}><span className={styles.projectBadge}>{project.name.slice(0, 2).toUpperCase()}</span><span><strong>{project.name}</strong><small>{project.code} · {project.description}</small></span></div>
+                  <div className={styles.projectInfo}><span><strong>{project.name}</strong><small>{project.code} · {project.description}</small></span></div>
                   <span className={`${styles.status} ${styles[project.tone]}`}>{project.status}</span>
                   <div className={styles.progress}><span><i style={{ width: `${project.progress}%` }} /></span><strong>{project.progress}%</strong></div>
                   <time dateTime={project.date}>{project.deadline}</time>

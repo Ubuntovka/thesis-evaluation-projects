@@ -227,7 +227,7 @@
 
 .filters a {
   padding: 6px 11px;
-  border: 1px solid #d4e5dc;
+  border: 1px solid transparent;
   border-radius: 20px;
   background: #fff;
   color: #54736a;
@@ -241,7 +241,6 @@
 }
 
 .filters .selected {
-  border-color: #236e58;
   background: #236e58;
   color: #fff;
 }
@@ -255,10 +254,9 @@
 .card {
   min-width: 0;
   overflow: visible;
-  border: 1px solid #dae7df;
+  border: 1px solid transparent;
   border-radius: 13px;
   background: #fffefb;
-  box-shadow: 0 3px 10px rgba(28, 79, 63, .035);
 }
 
 .cover {
@@ -294,20 +292,6 @@
   background: #407e8a;
 }
 
-.courseMark {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border: 1px solid rgba(255, 255, 255, .5);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, .1);
-  font-family: Georgia, serif;
-  font-size: 12px;
-}
-
 .category {
   position: absolute;
   left: 13px;
@@ -317,17 +301,6 @@
   font-weight: 750;
   letter-spacing: .09em;
   text-transform: uppercase;
-}
-
-.coverLine {
-  position: absolute;
-  right: -25px;
-  bottom: -32px;
-  width: 142px;
-  height: 105px;
-  border: 1px solid rgba(255, 255, 255, .2);
-  border-radius: 50%;
-  box-shadow: 0 0 0 17px rgba(255, 255, 255, .08), 0 0 0 34px rgba(255, 255, 255, .05);
 }
 
 .bookmark {
@@ -391,12 +364,6 @@
   font-weight: 650;
 }
 
-.details span+span::before {
-  content: "•";
-  margin-right: var(--inner-gap);
-  color: #b1c7be;
-}
-
 .card h3 {
   margin: var(--inner-gap) 0 0;
   color: #183e34;
@@ -418,7 +385,7 @@
   justify-content: space-between;
   margin-top: auto;
   padding-top: var(--inner-gap);
-  border-top: 1px solid #e7eee9;
+  border-top: 1px solid transparent;
   color: #526861;
   font-size: 8px;
 }
@@ -426,11 +393,6 @@
 .cardFoot span:last-child {
   color: #267159;
   font-weight: 750;
-}
-
-.cardFoot b {
-  margin-left: 3px;
-  font-size: 11px;
 }
 
 @media (max-width: 900px) {

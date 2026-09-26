@@ -2,12 +2,12 @@ import { ActionButton } from "./ActionButton";
 import styles from "./beta.module.css";
 
 const courses = [
-  { title: "Strategic Communication", category: "Leadership", level: "Intermediate", duration: "4 weeks", description: "Build clear narratives, align stakeholders and lead productive conversations across teams.", lessons: "18 lessons", color: "fern", initials: "SC" },
-  { title: "Data Storytelling", category: "Data skills", level: "Beginner", duration: "3 weeks", description: "Turn analysis into memorable stories using structure, context and confident visual choices.", lessons: "14 lessons", color: "ocean", initials: "DS" },
-  { title: "Product Discovery", category: "Product", level: "Intermediate", duration: "5 weeks", description: "Test assumptions, uncover customer needs and shape stronger opportunities before delivery.", lessons: "22 lessons", color: "citrus", initials: "PD" },
-  { title: "Inclusive Team Leadership", category: "Leadership", level: "Advanced", duration: "4 weeks", description: "Create the conditions for trust, useful challenge and meaningful participation on your team.", lessons: "16 lessons", color: "clover", initials: "IT" },
-  { title: "Service Design Essentials", category: "Design", level: "Beginner", duration: "6 weeks", description: "Map complete service experiences and improve the moments that matter to customers.", lessons: "24 lessons", color: "coral", initials: "SD" },
-  { title: "Financial Confidence", category: "Business", level: "Intermediate", duration: "3 weeks", description: "Read essential financial signals and make better commercial decisions with confidence.", lessons: "12 lessons", color: "lagoon", initials: "FC" },
+  { title: "Strategic Communication", category: "Leadership", level: "Intermediate", duration: "4 weeks", description: "Build clear narratives, align stakeholders and lead productive conversations across teams.", lessons: "18 lessons", color: "fern" },
+  { title: "Data Storytelling", category: "Data skills", level: "Beginner", duration: "3 weeks", description: "Turn analysis into memorable stories using structure, context and confident visual choices.", lessons: "14 lessons", color: "ocean" },
+  { title: "Product Discovery", category: "Product", level: "Intermediate", duration: "5 weeks", description: "Test assumptions, uncover customer needs and shape stronger opportunities before delivery.", lessons: "22 lessons", color: "citrus" },
+  { title: "Inclusive Team Leadership", category: "Leadership", level: "Advanced", duration: "4 weeks", description: "Create the conditions for trust, useful challenge and meaningful participation on your team.", lessons: "16 lessons", color: "clover" },
+  { title: "Service Design Essentials", category: "Design", level: "Beginner", duration: "6 weeks", description: "Map complete service experiences and improve the moments that matter to customers.", lessons: "24 lessons", color: "coral" },
+  { title: "Financial Confidence", category: "Business", level: "Intermediate", duration: "3 weeks", description: "Read essential financial signals and make better commercial decisions with confidence.", lessons: "12 lessons", color: "lagoon" },
 ] as const;
 
 const categories = ["All courses", "Leadership", "Data skills", "Product", "Design", "Business"];
@@ -37,11 +37,10 @@ export function BetaView() {
           {courses.map((course, index) => (
             <article className={styles.card} key={course.title}>
               <div className={`${styles.cover} ${styles[course.color]}`}>
-                <span className={styles.courseMark}>{course.initials}</span><span className={styles.category}>{course.category}</span>
+                <span className={styles.category}>{course.category}</span>
                 <ActionButton accessibleName={index > 0 ? `Bookmark ${course.title}` : undefined} className={styles.bookmark} iconClassName={styles.bookmarkIcon} />
-                <span className={styles.coverLine} aria-hidden="true" />
               </div>
-              <div className={styles.cardBody}><div className={styles.details}><span>{course.level}</span><span>{course.duration}</span></div><h3>{course.title}</h3><p>{course.description}</p><div className={styles.cardFoot}><span>{course.lessons}</span><span>View course <b aria-hidden="true">→</b></span></div></div>
+              <div className={styles.cardBody}><div className={styles.details}><span>{course.level}</span><span>{course.duration}</span></div><h3>{course.title}</h3><p>{course.description}</p><div className={styles.cardFoot}><span>{course.lessons}</span><span>View course</span></div></div>
             </article>
           ))}
         </section>

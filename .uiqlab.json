@@ -2,23 +2,39 @@
   "projectKey": "b876a46e-fe1a-4b40-a095-01ef8bfca8dc",
   "name": "study-website",
   "ci": {
-    "branches": ["main", "feature/**"],
+    "branches": [
+      "main",
+      "feature/**"
+    ],
     "baselineBranch": "main",
     "pages": [
       {
         "path": "/courses",
         "profiles": [
-          { "id": "visual-clutter", "direction": "reduce-complexity" },
-          { "id": "text-amount", "direction": "fewer-words" }
+          {
+            "id": "visual-complexity",
+            "direction": "reduce-complexity"
+          },
+          {
+            "id": "text-amount",
+            "direction": "fewer-words"
+          }
         ],
-        "qualityGate": { "mode": "enforce" }
+        "qualityGate": {
+          "mode": "enforce"
+        }
       },
       {
         "path": "/dashboard",
         "profiles": [
-          { "id": "visual-clutter", "direction": "reduce-complexity" }
+          {
+            "id": "visual-complexity",
+            "direction": "reduce-complexity"
+          }
         ],
-        "qualityGate": { "mode": "warn" }
+        "qualityGate": {
+          "mode": "warn"
+        }
       }
     ]
   }

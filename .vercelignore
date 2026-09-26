@@ -1,0 +1,4 @@
+.uiqlab-client
+uiqlab-report.*
+vercel-deploy.log
+preview.env

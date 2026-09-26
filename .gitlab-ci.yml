@@ -1,0 +1,52 @@
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS && $CI_PIPELINE_SOURCE == "push"'
+      when: never
+    - if: '$CI_COMMIT_BRANCH'
+
+variables:
+  UIQLAB_CLIENT_REPO: "https://github.com/Ubuntovka/ma-mariia-katsala.git"
+  # Commit of the CI client used for the study. Change it once, before the pilot.
+  UIQLAB_CLIENT_REF: "562810e3f0948e21cae088037b0b75be8aeaba42"
+
+stages: [preview, assess]
+
+default:
+  tags: [uiqlab-study]
+
+ui-preview:
+  stage: preview
+  script:
+    - PREVIEW_URL="$(sh scripts/deploy-preview.sh)"
+    - echo "UIQLAB_PREVIEW_URL=$PREVIEW_URL" > preview.env
+    - cat preview.env
+  artifacts:
+    reports:
+      dotenv: preview.env
+
+web-ui-assessment:
+  stage: assess
+  needs:
+    - job: ui-preview
+      artifacts: true
+  before_script:
+    - if [ -n "$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME" ]; then export UIQLAB_BRANCH="$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME"; else export UIQLAB_BRANCH="$CI_COMMIT_BRANCH"; fi
+    - rm -rf .uiqlab-client
+    - git init -q .uiqlab-client
+    - git -C .uiqlab-client fetch -q --depth 1 "$UIQLAB_CLIENT_REPO" "$UIQLAB_CLIENT_REF"
+    - git -C .uiqlab-client checkout -q FETCH_HEAD
+    - npm ci --prefix .uiqlab-client/apps/uiqlab-ci
+    - npm run build --prefix .uiqlab-client/apps/uiqlab-ci
+  script:
+    - node .uiqlab-client/apps/uiqlab-ci/dist/src/cli.js
+  allow_failure:
+    exit_codes:
+      - 2
+  artifacts:
+    when: always
+    expire_in: never
+    expose_as: "UIQLab report"
+    paths:
+      - uiqlab-report.html
+      - uiqlab-report.json

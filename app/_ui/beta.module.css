@@ -7,18 +7,6 @@
   color: #173b34;
 }
 
-.baseline,
-.textAmount,
-.accessibility {
-  --condition-marker: 0;
-}
-
-.screenWhitespace {
-  --grid-gap: 40px;
-  --card-pad: 14px;
-  --inner-gap: 9px;
-}
-
 .header {
   height: 68px;
   border-bottom: 1px solid #dce8e1;
@@ -445,133 +433,7 @@
   font-size: 11px;
 }
 
-/* Each profile changes one dominant visual characteristic from the baseline. */
-.visualClutter {
-  --condition-marker: 1;
-}
-
-.visualClutter .coverLine,
-.visualClutter .courseMark,
-.visualClutter .details span+span::before,
-.visualClutter .cardFoot b {
-  display: none;
-}
-
-.visualClutter .card,
-.visualClutter .filters a {
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.visualClutter .filters .selected {
-  background: #236e58;
-}
-
-.visualClutter .cardFoot {
-  border-top-color: transparent;
-}
-
-.screenWhitespace .headerInner,
-.screenWhitespace .introInner,
-.screenWhitespace .catalogue {
-  width: min(1220px, calc(100% - 80px));
-}
-
-.screenWhitespace .header {
-  height: 78px;
-}
-
-.screenWhitespace .introInner {
-  min-height: 245px;
-  gap: 120px;
-}
-
-.screenWhitespace .catalogue {
-  padding-block: 44px 60px;
-}
-
-.screenWhitespace .filters {
-  margin-block: 26px 30px;
-}
-
-.screenWhitespace .grid {
-  grid-template-columns: repeat(3, minmax(0, 300px));
-  justify-content: space-between;
-  row-gap: 46px;
-}
-
-.screenWhitespace .cover {
-  height: 68px;
-}
-
-.screenWhitespace .courseMark {
-  width: 30px;
-  height: 30px;
-}
-
-.screenWhitespace .cardBody {
-  min-height: 116px;
-}
-
-.colorfulness {
-  --condition-marker: 2;
-}
-
-.colorfulness .intro {
-  background: linear-gradient(110deg, #dff4e8 0%, #e4f4f0 55%, #f7edcf 100%);
-}
-
-.colorfulness .fern {
-  background: #24775b;
-}
-
-.colorfulness .ocean {
-  background: #177c88;
-}
-
-.colorfulness .citrus {
-  background: #7a8120;
-}
-
-.colorfulness .clover {
-  background: #2a8754;
-}
-
-.colorfulness .coral {
-  background: #b24f45;
-}
-
-.colorfulness .lagoon {
-  background: #2e719d;
-}
-
-.colorfulness .filters a:nth-child(2) {
-  background: #edf8f1;
-  color: #237253;
-}
-
-.colorfulness .filters a:nth-child(3) {
-  background: #e8f6f7;
-  color: #176e75;
-}
-
-.colorfulness .filters a:nth-child(4) {
-  background: #f4f5dc;
-  color: #68721d;
-}
-
-.colorfulness .filters a:nth-child(5) {
-  background: #fff0ea;
-  color: #98483e;
-}
-
-.colorfulness .filters a:nth-child(6) {
-  background: #edf0fb;
-  color: #485d9c;
-}
-
 @media (max-width: 900px) {
-
   .headerInner,
   .introInner,
   .catalogue {
@@ -590,10 +452,5 @@
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .screenWhitespace .grid {
-    grid-template-columns: repeat(2, minmax(0, 300px));
-    justify-content: space-around;
   }
 }
